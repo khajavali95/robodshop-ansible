@@ -15,7 +15,7 @@
 
 - name: search ans replace ip adress
   ansible.builtin.replace:
-    path: /etc/redis.conf
+    path: "{{item}}"
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
   loop:
