@@ -14,7 +14,7 @@
 
 - name: search ans replace ip adress
   ansible.builtin.replace:
-    path: /etc/mongod.conf
+    path: /etc/redis.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
