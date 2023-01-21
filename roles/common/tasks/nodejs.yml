@@ -34,7 +34,7 @@
 
 - name: copy  service file
   ansible.builtin.copy:
-    src: {{component}}.service
+    src: "{{component}}.service"
     dest: /etc/systemd/system/{{component}}.service
 
 - name: restat the catalogue service
