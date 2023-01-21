@@ -35,8 +35,8 @@
 
 - name: copy catalogue service file
   ansible.builtin.copy:
-   src: user.service
-   dest: /etc/systemd/system/user.service
+   src: cart.service
+   dest: /etc/systemd/system/cart.service
 
 - name: restat the catalogue service
   ansible.builtin.systemd:
