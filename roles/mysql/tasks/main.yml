@@ -23,7 +23,7 @@
   ignore_errors: yes
 
 - name: password status
-  asnsible.builtin.debug:
+  ansible.builtin.debug:
     msg: password changed
     when: out.rc == 1
 
