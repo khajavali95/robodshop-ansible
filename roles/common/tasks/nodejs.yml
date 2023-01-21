@@ -56,7 +56,7 @@
     state: installed
   when: schema_load
 
-- name: load schema for catalogue
+- name: load schema
   community.mongodb.mongodb_shell:
     login_host: mongodb-dev.khajavali1995.online
     file: "/app/schema/{{component}}.js"
