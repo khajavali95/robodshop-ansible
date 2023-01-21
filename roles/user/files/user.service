@@ -1,9 +1,9 @@
 [Unit]
-Description = Catalogue Service
-
+Description = user Service
 [Service]
 User=roboshop
 Environment=MONGO=true
+Environment=REDIS_HOST=redis-dev.khajavali1995.online
 Environment=MONGO_URL="mongodb://mongodb-dev.khajavali1995.online:27017/catalogue"
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=catalogue
