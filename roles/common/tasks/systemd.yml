@@ -1,0 +1,13 @@
+
+
+- name: copy  service file
+  ansible.builtin.copy:
+    src: "{{component}}.service"
+    dest: /etc/systemd/system/{{component}}.service
+
+- name: restat the catalogue service
+  ansible.builtin.systemd:
+    name: "{{component}}"
+    daemon_reload: yes
+    enabled: yes
+    state: restarted

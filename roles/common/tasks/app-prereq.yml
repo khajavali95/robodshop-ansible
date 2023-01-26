@@ -1,6 +1,3 @@
-- name: configure node js
-  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-
 - name: install node js
   ansible.builtin.yum:
     name: nodejs
@@ -25,29 +22,3 @@
     src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}.zip
     dest: /app
     remote_src: yes
-
-- name: app-prereq
-  ansible.builtin.include_tasks: "app-prereq.yml"
-
-- name: node js dependences npm install
-  community.general.npm:
-    path: /app
-    state: latest
-
-- name: restart
-  ansible.builtin.include_tasks: "systemd.yml"
-
-
-
-
-- name: load schema
-  ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"
-  when: schema_load
-
-
-
-
-
-
-
-
