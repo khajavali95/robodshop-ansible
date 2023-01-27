@@ -1,3 +1,9 @@
+- name: install python devops
+  ansible.builtin.yum:
+    name: python3-PyMySQL
+    State: installed
+
+
 - name: load MYSQL Schema
   comunity.mysql.mysql_db:
     state: import
